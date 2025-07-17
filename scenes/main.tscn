@@ -1,0 +1,129 @@
+[gd_scene load_steps=14 format=3 uid="uid://d4gfdmjrfx2c5"]
+
+[ext_resource type="Texture2D" uid="uid://d0vbtak0ifivl" path="res://assets/Sprites/floor_texture.png" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://cxurbd7k308mi" path="res://scenes/player.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://do8ee3y6hjwg0" path="res://scenes/zombie.tscn" id="3_sugp2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0wfyh"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_sugp2"]
+sky_material = SubResource("ProceduralSkyMaterial_0wfyh")
+
+[sub_resource type="Environment" id="Environment_jyhfs"]
+background_mode = 2
+sky = SubResource("Sky_sugp2")
+tonemap_mode = 2
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_sugp2"]
+vertices = PackedVector3Array(-4.25, 0.52, -1.74773, -3.75, 0.52, -1.24773, 0.75, 0.52, -5.24773, 0.75, 0.52, -7.49773, -7, 0.52, -1.74773, -24.25, 0.52, 0.00227356, -7.5, 0.52, -1.24773, 1.25, 0.52, -7.99773, 2.5, 0.52, -24.2477, -24.25, 0.52, -24.2477, 2.5, 0.52, -7.99773, -7.5, 0.52, 0.00227356, 4.5, 0.52, -5.24773, 3.75, 0.52, -4.74773, 8.75, 0.52, -0.997726, 9.25, 0.52, -1.74773, 12, 0.52, -1.74773, 12.5, 0.52, -1.24773, 24.25, 0.52, 0.00227356, 4.5, 0.52, -7.49773, 4, 0.52, -7.99773, 24.25, 0.52, -24.2477, 12.5, 0.52, 0.00227356, 1.25, 0.52, -4.74773, -3.75, 0.52, 1.25227, 8.75, 0.52, 1.25227, -4.25, 0.52, 1.75227, -5.5, 0.52, 1.75227, -5.5, 0.52, 24.2523, 9.5, 0.52, 24.2523, 9.5, 0.52, 1.75227, -6, 2.33, -0.247726, -6, 2.33, 0.252274, -5.25, 2.33, 0.252274, -5.25, 2.33, -0.247726, 10.25, 2.25, -0.247726, 10.25, 2.25, 0.252274, 11, 2.25, 0.252274, 11, 2.25, -0.247726, -7.5, 0.52, 1.25227, -7, 0.52, 1.75227, -24.25, 0.52, 24.2523, 12.5, 0.52, 1.25227, 12, 0.52, 1.75227, 24.25, 0.52, 24.2523)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(3, 4, 7), PackedInt32Array(7, 4, 8), PackedInt32Array(8, 4, 5), PackedInt32Array(8, 5, 9), PackedInt32Array(8, 10, 7), PackedInt32Array(6, 11, 5), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(18, 17, 16), PackedInt32Array(12, 19, 15), PackedInt32Array(15, 19, 16), PackedInt32Array(20, 10, 8), PackedInt32Array(19, 20, 16), PackedInt32Array(16, 20, 18), PackedInt32Array(18, 20, 8), PackedInt32Array(18, 8, 21), PackedInt32Array(18, 22, 17), PackedInt32Array(1, 2, 23), PackedInt32Array(14, 25, 13), PackedInt32Array(13, 25, 23), PackedInt32Array(23, 25, 1), PackedInt32Array(1, 25, 24), PackedInt32Array(28, 27, 26), PackedInt32Array(24, 25, 26), PackedInt32Array(26, 25, 30), PackedInt32Array(26, 30, 29), PackedInt32Array(26, 29, 28), PackedInt32Array(34, 33, 31), PackedInt32Array(31, 33, 32), PackedInt32Array(38, 37, 35), PackedInt32Array(35, 37, 36), PackedInt32Array(5, 11, 39), PackedInt32Array(39, 40, 5), PackedInt32Array(5, 40, 41), PackedInt32Array(41, 40, 28), PackedInt32Array(40, 27, 28), PackedInt32Array(42, 22, 18), PackedInt32Array(42, 18, 43), PackedInt32Array(43, 18, 44), PackedInt32Array(43, 44, 29), PackedInt32Array(29, 30, 43)]
+cell_height = 0.01
+agent_radius = 0.75
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
+albedo_color = Color(0, 0.211765, 0, 1)
+albedo_texture = ExtResource("1_o5qli")
+uv1_scale = Vector3(30, 20, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_sgp6g"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sgp6g"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5qli"]
+albedo_color = Color(0.66235, 0.662351, 0, 1)
+albedo_texture = ExtResource("1_o5qli")
+uv1_scale = Vector3(3, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0wfyh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sugp2"]
+
+[node name="main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_jyhfs")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="player" parent="." instance=ExtResource("2_0wfyh")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.379299, 1.06957, 0)
+
+[node name="zombie" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 6.27237, 0, 0)
+
+[node name="zombie4" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 17.9335, 0.869, 11.0869)
+
+[node name="zombie5" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 17.9335, 0.869, -2.43047)
+
+[node name="zombie6" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 17.9335, 0.869, -14.1661)
+
+[node name="zombie7" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -15.3773, 0.869, -14.1661)
+
+[node name="zombie8" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -15.3773, 0.869, 17.112)
+
+[node name="zombie2" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 6.27237, 0, 5.33889)
+
+[node name="zombie3" parent="." instance=ExtResource("3_sugp2")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 6.27237, 0, 14.7227)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_sugp2")
+
+[node name="floor" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00227356)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/floor"]
+material_override = SubResource("StandardMaterial3D_0wfyh")
+mesh = SubResource("BoxMesh_sgp6g")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/floor"]
+shape = SubResource("BoxShape3D_sgp6g")
+
+[node name="box" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.63937, 1.06957, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/box"]
+transform = Transform3D(2, 0, 0, 0, 1.849, 0, 0, 0, 1.529, -1.91878, 0.323225, 0)
+material_override = SubResource("StandardMaterial3D_o5qli")
+mesh = SubResource("BoxMesh_0wfyh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/box"]
+transform = Transform3D(2, 0, 0, 0, 1.849, 0, 0, 0, 1.529, -1.91878, 0.323225, 0)
+shape = SubResource("BoxShape3D_sugp2")
+
+[node name="box3" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.64415, 1.06957, -6.36207)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/box3"]
+transform = Transform3D(2, 0, 0, 0, 1.849, 0, 0, 0, 1.529, 0.015902, 0.323225, 0)
+material_override = SubResource("StandardMaterial3D_o5qli")
+mesh = SubResource("BoxMesh_0wfyh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/box3"]
+transform = Transform3D(2, 0, 0, 0, 1.849, 0, 0, 0, 1.529, 0.015902, 0.323225, 0)
+shape = SubResource("BoxShape3D_sugp2")
+
+[node name="box2" type="StaticBody3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.77273, 1.00186, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/box2"]
+transform = Transform3D(2, 0, 0, 0, 1.849, 0, 0, 0, 1.529, 1.90288, 0.309097, 0)
+material_override = SubResource("StandardMaterial3D_o5qli")
+mesh = SubResource("BoxMesh_0wfyh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/box2"]
+transform = Transform3D(2, 0, 0, 0, 1.849, 0, 0, 0, 1.529, 1.90288, 0.309097, 0)
+shape = SubResource("BoxShape3D_sugp2")
